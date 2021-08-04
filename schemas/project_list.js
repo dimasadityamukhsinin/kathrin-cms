@@ -49,41 +49,23 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "description_1",
-      title: "Description 1",
+      name: "description",
+      title: "Description",
       type: "blockContent",
       validation: (Rule) => Rule.required(),
     },
-    {
-      name: "description_2",
-      title: "Description 2",
-      type: "blockContent",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "description_3",
-      title: "Description 3",
-      type: "blockContent",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: "Image Gallery",
-      name: "images",
-      type: "array",
-      description: "JPEG / PNG",
-      of: [
-        {
-          type: "img",
-        },
-      ],
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "description_4",
-      title: "Description 4",
-      type: "blockContent",
-      validation: (Rule) => Rule.required(),
-    },
+    // {
+    //   title: "Image Gallery",
+    //   name: "images",
+    //   type: "array",
+    //   description: "JPEG / PNG",
+    //   of: [
+    //     {
+    //       type: "img",
+    //     },
+    //   ],
+    //   validation: (Rule) => Rule.required(),
+    // },
     {
       name: "order",
       title: "Order",

@@ -1,4 +1,5 @@
 export default {
+    title: "Image",
     name: "img",
     type: "object",
     fields: [
