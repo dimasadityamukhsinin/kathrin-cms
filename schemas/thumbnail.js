@@ -6,7 +6,7 @@ export default {
   validation: (Rule) => Rule.required(),
   fields: [
     {
-      title: "Name",
+      title: "Edit Alt Text",
       name: "name",
       type: "string",
       validation: (Rule) => Rule.required(),

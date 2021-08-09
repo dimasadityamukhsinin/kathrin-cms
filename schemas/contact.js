@@ -11,8 +11,7 @@ export default {
     {
       title: "Link",
       name: "link",
-      type: "string",
-      validation: (Rule) => Rule.required(),
+      type: "string"
     },
   ],
 };

@@ -13,7 +13,7 @@ export default {
           type: "image",
         },
         {
-          title: "Name",
+          title: "Edit Alt Text",
           name: "name",
           type: "string",
           validation: (Rule) => Rule.required(),

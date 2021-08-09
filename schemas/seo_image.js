@@ -5,7 +5,7 @@ export default {
   type: "image",
   fields: [
     {
-      title: "Name",
+      title: "Edit Alt Text",
       name: "name",
       type: "string",
     },
