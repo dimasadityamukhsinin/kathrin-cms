@@ -4,6 +4,11 @@ export default {
     type: 'document',
     fields: [
         {
+          title: 'SEO',
+          name: 'seo',
+          type: 'seo',
+        },
+        {
           name: 'title',
           title: 'Title',
           type: 'blockContent',
