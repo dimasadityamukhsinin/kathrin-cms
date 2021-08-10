@@ -11,7 +11,7 @@ export default {
     {
       title: "Link",
       name: "link",
-      type: "string",
+      type: "url",
     }
   ],
 };
