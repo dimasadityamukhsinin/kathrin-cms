@@ -1,83 +1,108 @@
 export default {
-  name: "project_list",
-  title: "Project List",
-  type: "document",
+  name: 'project_list',
+  title: 'Project List',
+  type: 'document',
   fields: [
     {
-      name: "name",
-      title: "Name",
-      type: "string",
-      description: "For display on Project List",
+      name: 'name',
+      title: 'Project Title',
+      type: 'string',
+      description: 'For display on Project List',
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "slug",
-      title: "Slug",
-      type: "slug",
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
       description:
         "Slug is generated from Name, Lower Characters (a-z), Numericals (0-9), dash (-) and must not start with a /, Minimum 3 Characters, eg: 'project-title'",
       options: {
-        source: "name",
+        source: 'name',
         maxLength: 96,
       },
       validation: (Rule) =>
         Rule.custom((slug) => {
-          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/;
+          const regex = /^[a-z0-9]{3,}(?:-[a-z0-9]+)*$/
           if (slug.current.match(regex) !== null) {
-            return true;
+            return true
           } else {
-            return "Not a valid slug";
+            return 'Not a valid slug'
           }
         }),
     },
     {
-      name: "title",
-      title: "Title",
-      type: "blockContent",
-      description: "For display on Project Page",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      title: "SEO",
-      name: "seo",
-      type: "seo",
-    },
-    {
       title: "Thumbnail",
       name: "thumb",
-      type: "thumb",
+      type: "image",
+      description: "For display on Project List | JPEG / PNG / WEBP",
+      validation: (Rule) => Rule.required(),
+      fields: [
+        {
+          title: "Edit Alt Text",
+          name: "name",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
+    {
+      title: 'SEO',
+      name: 'seo',
+      type: 'object',
+      options: {
+        collapsible: true,
+      },
+      fields: [
+        {
+          name: 'seo_description',
+          type: 'string',
+          title: 'Description',
+        },
+        {
+          name: 'seo_keywords',
+          type: 'string',
+          title: 'Keywords',
+        },
+        {
+          name: "seo_image",
+          title: "SEO Image",
+          description: "800 x 600 | PNG / JPEG / WEBP | max 100kb",
+          type: "image",
+          fields: [
+            {
+              title: "Edit Alt Text",
+              name: "name",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'title',
+      title: 'Project Description',
+      type: 'blockContent',
+      description: 'For display on Project Page',
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "description",
-      title: "Description",
-      type: "blockContent",
+      name: 'description',
+      title: 'Content',
+      type: 'blockContent',
       validation: (Rule) => Rule.required(),
     },
-    // {
-    //   title: "Image Gallery",
-    //   name: "images",
-    //   type: "array",
-    //   description: "JPEG / PNG",
-    //   of: [
-    //     {
-    //       type: "img",
-    //     },
-    //   ],
-    //   validation: (Rule) => Rule.required(),
-    // },
     {
-      name: "order",
-      title: "Order",
-      type: "number",
+      name: 'order',
+      title: 'Order',
+      type: 'number',
       hidden: true,
     },
   ],
 
   preview: {
     select: {
-      title: "name",
-      media: "thumb",
+      title: 'name',
+      media: 'thumb',
     },
   },
-};
+}

@@ -4,14 +4,42 @@ export default {
     type: 'document',
     fields: [
         {
-          title: 'SEO',
-          name: 'seo',
-          type: 'seo',
+          title: "SEO",
+          name: "seo",
+          type: "object",
+          options: {
+            collapsible: true
+          },
+          fields: [
+            {
+              name: "seo_description",
+              type: "string",
+              title: "Description",
+            },
+            {
+              name: "seo_keywords",
+              type: "string",
+              title: "Keywords",
+            },
+            {
+              name: "seo_image",
+              title: "SEO Image",
+              description: "800 x 600 | PNG / JPEG / WEBP | max 100kb",
+              type: "image",
+              fields: [
+                {
+                  title: "Edit Alt Text",
+                  name: "name",
+                  type: "string",
+                },
+              ],
+            },
+          ],
         },
         {
           name: 'title',
-          title: 'Title',
-          type: 'blockContent',
+          title: 'About Description',
+          type: 'string',
           validation: Rule => Rule.required()
         },
         {
@@ -21,32 +49,24 @@ export default {
           description: "JPEG / PNG / WEBP",
           of: [
             {
-              type: "select_image"
+              name: "select_image",
+              type: "object",
+              fields: [
+                {
+                  title: "Image",
+                  name: "image",
+                  type: "image",
+                },
+                {
+                  title: "Edit Alt Text",
+                  name: "name",
+                  type: "string",
+                  validation: (Rule) => Rule.required(),
+                },
+              ],
             }
           ],
           validation: (Rule) => Rule.required(),
-        },
-        {
-          title: 'Press',
-          name: 'press',
-          type: 'array',
-          of: [
-            {
-              type: 'press',
-            },
-          ],
-          validation: Rule => Rule.required(),
-        },
-        {
-          title: 'Contact',
-          name: 'contact',
-          type: 'array',
-          of: [
-            {
-              type: 'contact',
-            },
-          ],
-          validation: Rule => Rule.required(),
         },
         {
           name: 'footer',

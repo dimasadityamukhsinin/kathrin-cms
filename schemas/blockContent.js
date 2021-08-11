@@ -21,7 +21,23 @@ export default {
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
-      type: 'img',
+      title: "Image",
+      name: "img",
+      type: "object",
+      fields: [
+        {
+          title: "Image",
+          name: "image",
+          type: "image",
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          title: "Edit Alt Text",
+          name: "name",
+          type: "string",
+          validation: (Rule) => Rule.required(),
+        },
+      ],
     },
   ],
 }

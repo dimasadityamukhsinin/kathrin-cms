@@ -1,29 +1,51 @@
-import S from '@sanity/desk-tool/structure-builder';
+import S from '@sanity/desk-tool/structure-builder'
 
 export default () =>
   S.list()
     .title('Content')
     .items([
       ...S.documentTypeListItems().filter(
-        (listItem) => !['general', 'about', 'projects'].includes(listItem.getId())
+        (listItem) =>
+          ![
+            'project_list',
+            'settings',
+            'about',
+            'projects',
+            'home',
+            'linklist',
+          ].includes(listItem.getId()),
       ),
       S.listItem()
-        .title('Settings')
+        .title('Project List')
+        .child(
+          S.documentTypeList('project_list').title('Project List').child(),
+        ),
+      S.listItem()
+        .title('Pages')
         .child(
           S.list()
-            .title('Settings')
+            .title('Pages')
             .items([
               S.listItem()
-                .title('General')
-                .child(
-                  S.document().schemaType('general').documentId('general')
-                ),
+                .title('Home')
+                .child(S.document().schemaType('home').documentId('home')),
               S.listItem()
                 .title('About')
                 .child(S.document().schemaType('about').documentId('about')),
               S.listItem()
+                .title('About - Link List')
+                .child(S.documentTypeList('linklist').title('Link List').child()),
+              S.listItem()
                 .title('Projects')
-                .child(S.document().schemaType('projects').documentId('projects')),
-            ])
+                .child(
+                  S.document().schemaType('projects').documentId('projects'),
+                ),
+            ]),
         ),
-    ]);
+      S.listItem()
+        .title('Settings')
+        .child(S.document().schemaType('settings').documentId('settings')),
+      // S.listItem()
+      //   .title('Settings')
+      //   .child(S.documentTypeList('settings').title('Settings').child()),
+    ])

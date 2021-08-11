@@ -4,20 +4,48 @@ export default {
   type: 'document',
   fields: [
       {
-        title: 'SEO',
-        name: 'seo',
-        type: 'seo',
+        title: "SEO",
+        name: "seo",
+        type: "object",
+        options: {
+          collapsible: true
+        },
+        fields: [
+          {
+            name: "seo_description",
+            type: "string",
+            title: "Description",
+          },
+          {
+            name: "seo_keywords",
+            type: "string",
+            title: "Keywords",
+          },
+          {
+            name: "seo_image",
+            title: "SEO Image",
+            description: "800 x 600 | PNG / JPEG / WEBP | max 100kb",
+            type: "image",
+            fields: [
+              {
+                title: "Edit Alt Text",
+                name: "name",
+                type: "string",
+              },
+            ],
+          },
+        ],
       },
       {
         name: 'top',
-        title: 'Top',
-        type: 'blockContent',
+        title: 'Description',
+        type: 'string',
         validation: Rule => Rule.required()
       },
       {
         name: 'footer',
         title: 'Footer',
-        type: 'blockContent',
+        type: 'string',
         validation: Rule => Rule.required()
       }
   ],
