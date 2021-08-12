@@ -69,6 +69,48 @@ export default {
           validation: (Rule) => Rule.required(),
         },
         {
+          name: "linklist",
+          title: "Link List",
+          type: "array",
+          of: [
+            {
+              name: "link",
+              title: "Link",
+              type: "object",
+              fields: [
+                {
+                  name:"title",
+                  type: "string"
+                },
+                {
+                  title: "Link",
+                  name:"link",
+                  type: "array",
+                  of: [
+                    {
+                      name: 'content',
+                      type: 'object',
+                      fields: [
+                        {
+                          title: 'Name',
+                          name: 'name',
+                          type: 'string',
+                          validation: (Rule) => Rule.required(),
+                        },
+                        {
+                          title: 'Link',
+                          name: 'link',
+                          type: 'url',
+                        },
+                      ],
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
           name: 'footer',
           title: 'Footer',
           type: 'string',

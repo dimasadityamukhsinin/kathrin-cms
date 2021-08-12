@@ -12,7 +12,6 @@ export default () =>
             'about',
             'projects',
             'home',
-            'linklist',
           ].includes(listItem.getId()),
       ),
       S.listItem()
@@ -32,9 +31,6 @@ export default () =>
               S.listItem()
                 .title('About')
                 .child(S.document().schemaType('about').documentId('about')),
-              S.listItem()
-                .title('About - Link List')
-                .child(S.documentTypeList('linklist').title('Link List').child()),
               S.listItem()
                 .title('Projects')
                 .child(

@@ -12,7 +12,6 @@ import general from './settings'
 import home from './home'
 import about from './about'
 import project_list from './project_list'
-import linklist from './linklist'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,7 +30,6 @@ export default createSchema({
     // { type: 'typename' } in other document schemas
     blockContent,
     contact,
-    general,
-    linklist
+    general
   ]),
 })
