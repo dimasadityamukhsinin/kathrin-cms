@@ -8,6 +8,7 @@
  *    type: 'blockContent'
  *  }
  */
+
 export default {
   title: 'Block Content',
   name: 'blockContent',
@@ -16,25 +17,71 @@ export default {
     {
       title: 'Block',
       type: 'block',
+      marks: {
+        annotations: [
+          {
+            name: 'inlineSpacer',
+            type: 'object',
+            fields: [
+              {
+                title: 'Width',
+                name: 'width',
+                type: 'number',
+              },
+              {
+                title: "Left",
+                name: "left",
+                type: "boolean"
+              },
+              {
+                title: "Right",
+                name: "right",
+                type: "boolean"
+              }
+            ],
+          }
+        ],
+      },
     },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
     {
-      title: "Image",
-      name: "img",
-      type: "object",
+      name: 'spacer',
+      type: 'object',
+      title: 'Spacer',
       fields: [
         {
-          title: "Image",
-          name: "image",
-          type: "image",
+          title: 'Type',
+          name: 'title',
+          type: 'string',
+          readOnly: true,
+        },
+        {
+          title: 'Height',
+          name: 'height',
+          type: 'number',
+        },
+      ],
+      initialValue: {
+        title: 'Spacer',
+      },
+    },
+    {
+      title: 'Image',
+      name: 'img',
+      type: 'object',
+      fields: [
+        {
+          title: 'Image',
+          name: 'image',
+          type: 'image',
           validation: (Rule) => Rule.required(),
         },
         {
-          title: "Edit Alt Text",
-          name: "name",
-          type: "string",
+          title: 'Edit Alt Text',
+          name: 'name',
+          type: 'string',
           validation: (Rule) => Rule.required(),
         },
       ],
