@@ -23,7 +23,7 @@ export default {
           },
           {
             name: "seo_image",
-            title: "SEO Image",
+            title: "Image",
             description: "800 x 600 | PNG / JPEG / WEBP | max 100kb",
             type: "image",
             fields: [
