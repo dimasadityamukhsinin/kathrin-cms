@@ -17,31 +17,6 @@ export default {
     {
       title: 'Block',
       type: 'block',
-      marks: {
-        annotations: [
-          {
-            name: 'inlineSpacer',
-            type: 'object',
-            fields: [
-              {
-                title: 'Width',
-                name: 'width',
-                type: 'number',
-              },
-              {
-                title: "Left",
-                name: "left",
-                type: "boolean"
-              },
-              {
-                title: "Right",
-                name: "right",
-                type: "boolean"
-              }
-            ],
-          }
-        ],
-      },
     },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
