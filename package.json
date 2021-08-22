@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Dimas Aditya <dimasadityamukhsinin@gmail.com>",
+  "author": "tomo studio <editor@tomostudio.id>",
   "license": "UNLICENSED",
   "scripts": {
     "start": "sanity start",
@@ -18,6 +18,7 @@
     "@sanity/base": "^2.15.1",
     "@sanity/components": "^2.14.0",
     "@sanity/core": "^2.15.0",
+    "@sanity/dashboard": "^2.15.1",
     "@sanity/default-layout": "^2.15.1",
     "@sanity/default-login": "^2.15.0",
     "@sanity/desk-tool": "^2.15.1",
