@@ -60,7 +60,7 @@ const aboutDescription = React.forwardRef((props, ref) => {
 
 export default {
     name: 'about',
-    title: 'About',
+    title: 'Info',
     type: 'document',
     fields: [
         {
@@ -97,8 +97,21 @@ export default {
           ],
         },
         {
+          name: "image",
+          title: "Image",
+          description: "For display on Info Page | JPEG / PNG / WEBP",
+          type: "image",
+          fields: [
+            {
+              title: "Edit Alt Text",
+              name: "name",
+              type: "string",
+            },
+          ],
+        },
+        {
           name: 'title',
-          title: 'About Description',
+          title: 'Info Description',
           type: 'string',
           inputComponent: aboutDescription,
           validation: Rule => Rule.required()
@@ -181,7 +194,7 @@ export default {
     preview: {
       prepare() {
         return {
-          title: "About"
+          title: "Info"
         }
       }
     },

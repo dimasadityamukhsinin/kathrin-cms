@@ -29,7 +29,7 @@ export default () =>
                 .title('Home')
                 .child(S.document().schemaType('home').documentId('home')),
               S.listItem()
-                .title('About')
+                .title('Info')
                 .child(S.document().schemaType('about').documentId('about')),
               S.listItem()
                 .title('Projects')
