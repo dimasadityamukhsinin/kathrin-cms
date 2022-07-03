@@ -108,7 +108,12 @@ export default {
         title: 'Footer',
         type: 'string',
         validation: Rule => Rule.required()
-      }
+      },
+      {
+        title: 'Set Text Color',
+        name: 'textColor',
+        type: 'color',
+      },
   ],
   preview: {
     prepare() {

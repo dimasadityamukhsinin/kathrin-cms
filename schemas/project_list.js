@@ -153,6 +153,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      title: 'Set Text Color',
+      name: 'textColor',
+      type: 'color',
+    },
+    {
       name: 'order',
       title: 'Order',
       type: 'number',
