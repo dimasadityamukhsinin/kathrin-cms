@@ -1,6 +1,13 @@
 import React from 'react'
+import { FiExternalLink } from 'react-icons/fi'
 
 const normalRender = (props) => <h2>{props.children}</h2>
+
+const linkRender = (props) => (
+  <span>
+    {props.children} <FiExternalLink />
+  </span>
+)
 
 export default {
   name: 'about',
@@ -67,7 +74,23 @@ export default {
               { title: 'Strike', value: 'strike-through' },
               { title: 'Underline', value: 'underline' },
             ],
-            annotations: [],
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'Link',
+                blockEditor: {
+                  icon: () => <FiExternalLink />,
+                  render: linkRender,
+                },
+                fields: [
+                  {
+                    name: 'url',
+                    type: 'url',
+                  },
+                ],
+              },
+            ],
           },
           styles: [
             {
