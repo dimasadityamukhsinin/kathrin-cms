@@ -1,13 +1,11 @@
-/**
- * This is the schema definition for the rich text fields used for
- * for this blog studio. When you import it in schemas.js it can be
- * reused in other parts of the studio with:
- *  {
- *    name: 'someName',
- *    title: 'Some title',
- *    type: 'blockContent'
- *  }
- */
+import React from 'react'
+import { FiExternalLink } from 'react-icons/fi'
+
+const linkRender = (props) => (
+  <span>
+    {props.children} <FiExternalLink />
+  </span>
+)
 
 export default {
   title: 'Block Content',
@@ -17,6 +15,31 @@ export default {
     {
       title: 'Block',
       type: 'block',
+      marks: {
+        decorators: [
+          { title: 'Strong', value: 'strong' },
+          { title: 'Emphasis', value: 'em' },
+          { title: 'Strike', value: 'strike-through' },
+          { title: 'Underline', value: 'underline' },
+        ],
+        annotations: [
+          {
+            name: 'link',
+            type: 'object',
+            title: 'Link',
+            blockEditor: {
+              icon: () => <FiExternalLink />,
+              render: linkRender,
+            },
+            fields: [
+              {
+                name: 'url',
+                type: 'url',
+              },
+            ],
+          },
+        ],
+      },
     },
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
