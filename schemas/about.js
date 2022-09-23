@@ -62,6 +62,37 @@ export default {
     },
     {
       name: 'title',
+      title: 'Title',
+      type: 'array',
+      of: [
+        {
+          title: 'Block',
+          type: 'block',
+          marks: {
+            decorators: [
+              { title: 'Emphasis', value: 'em' },
+              { title: 'Strike', value: 'strike-through' },
+              { title: 'Underline', value: 'underline' },
+            ],
+            annotations: [
+            ],
+          },
+          styles: [
+            {
+              title: 'Normal',
+              value: 'normal',
+              blockEditor: {
+                render: normalRender,
+              },
+            },
+          ],
+          lists: [],
+        },
+      ],
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'description',
       title: 'Info Description',
       type: 'array',
       of: [
@@ -95,10 +126,7 @@ export default {
           styles: [
             {
               title: 'Normal',
-              value: 'normal',
-              blockEditor: {
-                render: normalRender,
-              },
+              value: 'normal'
             },
           ],
           lists: [],
