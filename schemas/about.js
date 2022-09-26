@@ -94,44 +94,7 @@ export default {
     {
       name: 'description',
       title: 'Info Description',
-      type: 'array',
-      of: [
-        {
-          title: 'Block',
-          type: 'block',
-          marks: {
-            decorators: [
-              { title: 'Emphasis', value: 'em' },
-              { title: 'Strike', value: 'strike-through' },
-              { title: 'Underline', value: 'underline' },
-            ],
-            annotations: [
-              {
-                name: 'link',
-                type: 'object',
-                title: 'Link',
-                blockEditor: {
-                  icon: () => <FiExternalLink />,
-                  render: linkRender,
-                },
-                fields: [
-                  {
-                    name: 'url',
-                    type: 'url',
-                  },
-                ],
-              },
-            ],
-          },
-          styles: [
-            {
-              title: 'Normal',
-              value: 'normal'
-            },
-          ],
-          lists: [],
-        },
-      ],
+      type: 'blockContent',
       validation: (Rule) => Rule.required(),
     },
     {
