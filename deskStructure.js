@@ -9,7 +9,7 @@ export default () =>
     .items([
       ...S.documentTypeListItems().filter(
         (listItem) =>
-          !['project_list', 'settings', 'about', 'projects', 'home'].includes(
+          !['project_list', 'settings', 'about', 'projects'].includes(
             listItem.getId(),
           ),
       ),
@@ -26,10 +26,6 @@ export default () =>
           S.list()
             .title('Pages')
             .items([
-              S.listItem()
-                .title('Home')
-                .icon(() => <FiStar />)
-                .child(S.document().schemaType('home').documentId('home')),
               S.listItem()
                 .title('Info')
                 .icon(() => <FiStar />)

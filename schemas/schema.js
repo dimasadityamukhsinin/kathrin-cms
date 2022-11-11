@@ -9,7 +9,6 @@ import blockContent from './blockContent'
 import contact from './contact'
 import projects from './projects'
 import general from './settings'
-import home from './home'
 import about from './about'
 import project_list from './project_list'
 
@@ -24,7 +23,6 @@ export default createSchema({
     // in the studio.
     project_list,
     projects,
-    home,
     about,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
