@@ -18,6 +18,7 @@ export default {
       title: 'SEO',
       name: 'seo',
       type: 'object',
+      description: "Search Engine Optimization allows to improve the ranking in search results.",
       options: {
         collapsible: true,
       },
@@ -26,16 +27,18 @@ export default {
           name: 'seo_description',
           type: 'string',
           title: 'Description',
+          description: "Enter up to 400 characters to describe the Info Page. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp)."
         },
         {
           name: 'seo_keywords',
           type: 'string',
           title: 'Keywords',
+          description: "Enter some keywords to describe the Info Page (separated by commas)."
         },
         {
           name: 'seo_image',
           title: 'Image',
-          description: '800 x 600 | PNG / JPEG / WEBP | max 100kb',
+          description: '800 x 600 | PNG / JPEG / WEBP | max 100kb. This image is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).',
           type: 'image',
           fields: [
             {
@@ -50,7 +53,7 @@ export default {
     {
       name: 'image',
       title: 'Image',
-      description: 'For display on Info Page | JPEG / PNG / WEBP',
+      description: 'Image on top of the Info Page  I  JPEG / PNG / WEBP  I  Max Width 1920px',
       type: 'image',
       fields: [
         {
@@ -62,7 +65,7 @@ export default {
     },
     {
       name: 'title',
-      title: 'Title',
+      title: 'Info Heading',
       type: 'array',
       of: [
         {
@@ -95,13 +98,14 @@ export default {
       name: 'description',
       title: 'Info Description',
       type: 'blockContent',
+      description: "The content below will be displayed under Info Heading in the Info Page.",
       validation: (Rule) => Rule.required(),
     },
     {
       title: 'Selected Clients',
       name: 'selected_clients',
       type: 'array',
-      description: 'JPEG / PNG / WEBP',
+      description: 'JPEG / PNG / WEBP  I  Max Width 250 px',
       of: [
         {
           name: 'select_image',
@@ -125,8 +129,9 @@ export default {
     },
     {
       name: 'linklist',
-      title: 'Link List',
+      title: 'Linked Content List',
       type: 'array',
+      description: "Contents under the Info page that are linked to another URL.",
       of: [
         {
           name: 'link',
@@ -136,15 +141,18 @@ export default {
             {
               name: 'title',
               type: 'string',
+              validation: (Rule) => Rule.required(),
             },
             {
               title: 'Link',
               name: 'link',
               type: 'array',
+              validation: (Rule) => Rule.required(),
               of: [
                 {
                   name: 'content',
                   type: 'object',
+                  validation: (Rule) => Rule.required(),
                   fields: [
                     {
                       title: 'Name',
@@ -179,6 +187,7 @@ export default {
       title: 'Set Text Color',
       name: 'textColor',
       type: 'color',
+      description: "Customize the text color of the Info Page. Ensure the text color and background color has enough contrast for legibility."
     },
   ],
   preview: {

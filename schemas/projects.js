@@ -67,6 +67,7 @@ export default {
         title: "SEO",
         name: "seo",
         type: "object",
+        description: "Search Engine Optimization allows to improve the ranking in search results.",
         options: {
           collapsible: true
         },
@@ -75,16 +76,18 @@ export default {
             name: "seo_description",
             type: "string",
             title: "Description",
+            description: "Enter up to 400 characters to describe the Info Page. This description is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp)."
           },
           {
             name: "seo_keywords",
             type: "string",
             title: "Keywords",
+            description: "Enter some keywords to describe the Info Page (separated by commas)."
           },
           {
             name: "seo_image",
             title: "Image",
-            description: "800 x 600 | PNG / JPEG / WEBP | max 100kb",
+            description: "800 x 600 | PNG / JPEG / WEBP | max 100kb. This image is what will be displayed on search engines or when this page is being shared (e.g. Google or WhatsApp).",
             type: "image",
             fields: [
               {
@@ -98,8 +101,9 @@ export default {
       },
       {
         name: 'top',
-        title: 'Description',
+        title: 'Project Page Heading',
         type: 'string',
+        description: "Text on top of the Project Page",
         inputComponent: top,
         validation: Rule => Rule.required()
       },
@@ -113,6 +117,7 @@ export default {
         title: 'Set Text Color',
         name: 'textColor',
         type: 'color',
+        description: "Customize the text color of the Info Page. Ensure the text color and background color has enough contrast for legibility."
       },
   ],
   preview: {
