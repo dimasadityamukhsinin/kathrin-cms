@@ -13,7 +13,7 @@ export default {
           validation: Rule => Rule.required()
         },
         {
-          title: "SEO",
+          title: "Default SEO",
           name: "seo",
           type: "object",
           description: "Search Engine Optimization allows to improve the ranking in search results.",
